@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #52616A;
+  color: white;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.clock {
+  margin-top: 10%;
+  font-size: 5.5rem;
+  font-family: 'Tinos', serif;
+  font-weight: 400;
+}
+
+.clock h1 {
+  font-weight: 400;
+}
+
+input {
+  width: 50vw;
+  padding: 10px;
+  background: none;
+  /* border: none; */
+  outline: none;
+  text-align: center;
+  color: white;
+}
+
+input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color:transparent;
+}
