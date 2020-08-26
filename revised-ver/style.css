@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
 
 body {
   margin: 0;
@@ -11,6 +10,7 @@ body {
   align-items: center;
   background-color: #52616A;
   color: white;
+  text-shadow: 1px 3px 3px rgba(194, 194, 194, 0.527);
   font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -40,7 +40,6 @@ input::placeholder {
   color: white;
   text-align: center;
   font-size: 2rem;
-  /* font-family: 'Tinos', serif; */
 }
 
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
@@ -48,7 +47,7 @@ input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholde
 }
 
 input:last-of-type {
-  width: 55vw;
+  width: 500px;
 }
 
 .form-user {
