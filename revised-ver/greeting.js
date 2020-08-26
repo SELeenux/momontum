@@ -2,17 +2,17 @@ const userForm = document.querySelector(".js-userForm"),
   userInput = userForm.querySelector("input"),
   greeting = document.querySelector(".js-greetings");
 
-const USER = "currentUser",
-  SHOWING = "showing";
+const USER_LS = "currentUser",
+  SHOWING_CN = "showing";
 
 function paintGreeting(text) {
-  userForm.classList.remove(SHOWING);
-  greeting.classList.add(SHOWING);
+  userForm.classList.remove(SHOWING_CN);
+  greeting.classList.add(SHOWING_CN);
   greeting.innerHTML = `Hello ${text}`;
 }
 
 function storeName(text) {
-  localStorage.setItem(USER, text);
+  localStorage.setItem(USER_LS, text);
 }
 
 function handleSubmit(event) {
@@ -24,12 +24,12 @@ function handleSubmit(event) {
 }
 
 function createName() {
-  userForm.classList.add(SHOWING);
+  userForm.classList.add(SHOWING_CN);
   userForm.addEventListener("submit", handleSubmit);
 }
 
 function loadName() {
-  const CurrentUser = localStorage.getItem(USER);
+  const CurrentUser = localStorage.getItem(USER_LS);
 
   if (CurrentUser === null) {
     createName();
