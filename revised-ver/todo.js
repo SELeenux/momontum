@@ -1,8 +1,10 @@
-const toDoform = document.querySelector(".js-toDoForm"),
-  toDoInput = toDoform.querySelector("input"),
-  toDoList = document.querySelector(".js-toDos");
+const toDoForm = document.querySelector(".js-toDoForm"),
+  toDoInput = toDoForm.querySelector("input"),
+  toDoList = document.querySelector(".js-toDos"),
+  fullMsg = document.querySelector(".js-fullmsg");
 
-const TODOS_LS = "toDos";
+const TODOS_LS = "toDos",
+  SHOWING = "showing";
 let toDos = [];
 
 function storetoDos() {
@@ -19,6 +21,11 @@ function deleteToDo(event) {
   });
   toDos = removedToDos;
   storetoDos();
+  if (toDos.length < 5) {
+    toDoForm.classList.add(SHOWING);
+    fullMsg.classList.remove(SHOWING);
+    toDoForm.addEventListener("submit", handleSubmit);
+  }
 }
 
 function paintToDo(text) {
@@ -40,6 +47,11 @@ function paintToDo(text) {
   };
   toDos.push(toDoObj);
   storetoDos();
+  if (toDos.length > 4) {
+    toDoForm.classList.remove(SHOWING);
+    fullMsg.classList.add(SHOWING);
+    fullMsg.innerText = "It's full. Let's go to work now!";
+  }
 }
 
 function handleSubmit(event) {
@@ -53,15 +65,26 @@ function loadToDos() {
   const loadedToDos = localStorage.getItem(TODOS_LS);
   if (loadedToDos !== null) {
     const ToDosObj = JSON.parse(loadedToDos);
+    if (ToDosObj.length < 4) {
+      toDoForm.classList.add(SHOWING);
+      toDoForm.addEventListener("submit", handleSubmit);
+    }
+    else {
+      fullMsg.classList.add(SHOWING);
+      fullMsg.innerText = "It's full. Let's go to work now!";
+    }
     ToDosObj.forEach(function (toDo) {
       paintToDo(toDo.text);
     });
+  }
+  else {
+    toDoForm.classList.add(SHOWING);
+    toDoForm.addEventListener("submit", handleSubmit);
   }
 }
 
 function init() {
   loadToDos();
-  toDoform.addEventListener("submit", handleSubmit);
 }
 
 init();

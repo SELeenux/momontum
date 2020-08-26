@@ -60,17 +60,9 @@ input:last-of-type {
   font-size: 3rem;
 }
 
-.to-dos {
-  margin-top: 2vh;
-}
-
 .js-userForm,
 .greetings {
   display: none;
-}
-
-.showing {
-  display: block;
 }
 
 ul {
@@ -81,6 +73,7 @@ ul {
 
 li {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   margin-left: -80px;
   font-size: 20px;
@@ -89,4 +82,27 @@ li {
 button {
   background: none;
   border: none;
+}
+
+.weather {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 18px;
+}
+
+.full-msg,
+.to-do__form {
+  margin-top: 2vh;
+  display: none;
+}
+ 
+.full-msg {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.showing {
+  display: block;
 }

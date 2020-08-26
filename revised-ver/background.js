@@ -6,7 +6,6 @@ function changeBgImg(num) {
   const file = `./images/${num}.jpg`;
   body.style.backgroundImage = `url(${file})`;
   body.style.backgroundSize = "cover";
-  console.dir(body.style);
 }
 
 function genRandNum() {
